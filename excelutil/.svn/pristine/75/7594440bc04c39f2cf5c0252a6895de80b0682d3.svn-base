@@ -1,0 +1,35 @@
+package com.basefrm.converter;
+
+import com.basefrm.dao.IBaseDao;
+import com.basefrm.dao.Impl.BaseDaoImpl;
+import com.basefrm.excel.config.FieldValue;
+import com.basefrm.excel.parsing.CellValueConverter;
+import com.basefrm.util2.SpringUtil;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import java.util.Map;
+//@Component
+public class GenderValueConverter implements CellValueConverter {
+   @Autowired
+   private IBaseDao baseDao;
+   @Override
+    public Object convert(Object bean, Object value, FieldValue fieldValue, Type type, int rowNum) throws Exception {
+        System.out.println("OtherConfig的值:"+fieldValue.getOtherConfig());
+        if(type == Type.IMPORT) {
+            if("FUNCTION".equals(fieldValue.getCallType())) {
+                String functions = fieldValue.getCellValueConfig().replace("?",value.toString());
+                String sql = "select "+functions+" bzdm from dual";
+                System.out.println("FUNCTION时调用SQL《《》》: "+sql);
+                System.out.println("value值《《》》: "+value.toString());
+                    Map map = (Map) baseDao.loadBySql(sql, "map");
+                    if(StringUtils.isNotBlank(map.get("bzdm")+"")) {
+                        value = map.get("bzdm");
+                    }
+            }else if("PROCEDURE".equals(fieldValue.getCallType())){
+
+            }
+        }
+        return value;
+    }
+}

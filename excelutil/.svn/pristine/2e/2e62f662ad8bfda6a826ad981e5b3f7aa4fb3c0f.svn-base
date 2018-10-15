@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excels>
+	<!-- Xml 中的lineRow是必填项默认为1;titleIndex默认为0-->
+	<!-- 测试使用 ,学生类-->
+	<excel id="student" class="com.basefrm.entity.Studentmodel2"
+	sheetname="测试学生列表" enableStyle="true" defaultAlign="center" tableType="hb" sheetIndex="0"   lineRow="1" titleIndex="0" needReadTitle="NO">
+		<fieldTitles  name="id" cols ="1" rows="5" title="测试名称"/>
+		<fieldTitles name="types" cols ="1" rows="5" title="类型"/>
+		<fieldTitles name="type"  cols ="4" rows="1" title="数据类型"  keyValue="(0,15)"/>
+		<fieldTitles name="sex"  cols ="6" rows="0" title="性别" />
+		<!--needReadTitle="YES"-->
+		<field name="id" cols ="1" rows="5" title="ID" align="center" titleBgColor="dark_blue" uniformStyle="true"
+		columnWidth="3000" titleFountColor="white"/>
+		<!--KeyValue="XNXQ,1,1,0,9"-->
+		<field name="name" cols ="4" rows="5" rowsMerge="YES"  title="学生姓名" uniformStyle="true"/>
+		<!--<field name="cshbl" cols ="4" rows="5" colsMerge="YES"  title="测试合并列" uniformStyle="true"/>-->
+		<field name="age" cols ="7" rows="5" title="年龄" align="center" titleFountColor="red" titleBgColor="dark_blue" isNull="false" regex="^[1-9]\d*$" regexErrMsg="必须是数字"/>
+		<field name="studentno" cols ="7" rows="7" title="学号" titleFountColor="blue" isNull="false" />
+		<field name="createtime" cols ="7" rows="8" columnWidth="4000" title="创建时间" pattern="yyyy-MM-dd"/>
+		<field name="status" cols ="2" rows="9" title="状态" titleBgColor="green" format="1:正常,0:禁用,-1:无效" />
+		<!-- 创建人,可能需要查询数据库校验,这里使用自定义解析器 -->
+		<field name="createuser" cols ="5" rows="9" title="创建人"   isNull="false" />
+		<!--<field name="createuser" cols ="5" rows="9" title="创建人" cellValueConverter="com.basefrm.converter.GenderValueConverter"  isNull="false" otherConfig="测试变量"/>-->
+		<!-- 复杂对象 -->
+		<!--processType-->
+		<!--<field name="sex" cols ="2" rows="7" title="性别" cellValueConverter="com.basefrm.converter.GenderValueConverter" cellValueConfig="f_get_zd_mcTodm（'GB_XB','?')" callType="FUNCTION" otherConfig="测试FUCTION" processType="REPLACE"/>-->
+	</excel>
+	<!--高职院系兼职教师信息统计表-->
+	<excel id="gxyxjzjsxx" class="com.basefrm.entity.Gxyx_Jzjsxx" sheetname="高职院系兼职教师信息统计表" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles  cols ="0" rows="0" name="tjsj" title="统计时间"  keyValue="(0,15)"/>
+		<field name="xh" title="序号"/>
+		<field name="yxmc" title="院系"/>
+		<field name="gh" title="工号"/>
+		<field name="xm" title="姓名"/>
+		<field name="xb" title="性别" cellValueConverter="com.basefrm.converter.GenderValueConverter" cellValueConfig="f_get_zd_mcTodm（'GB_XB','?')" callType="FUNCTION" otherConfig="测试FUCTION" processType="REPLACE"/>
+		<field name="mz" title="民族"/>
+		<field name="jg" title="籍贯"/>
+		<field name="zzmm" title="政治面貌"/>
+		<field name="sfzhm" title="身份证号"/>
+		<field name="byyx" title="毕业院校"/>
+		<field name="xl" title="学历"/>
+		<field name="xw" title="学位"/>
+		<field name="zw" title="职务"/>
+		<field name="zc" title="职称"/>
+		<field name="jslb" title="教师类别(专职/兼职)"/>
+		<field name="rkkc" title="任课课程"/>
+		<field name="sfssx" title="是否双师型"/>
+		<field name="lxsj" title="来校时间"/>
+		<field name="lxfs" title="联系方式"/>
+	</excel>
+	<!--二期卓越教师考勤表-->
+	<excel id="zzyjskqbrq" class="com.basefrm.entity.Zyjskqb_Rq" sheetname="二期卓越教师考勤表" tableType="hb"  sheetIndex="1"  lineRow="2" titleIndex="3" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="pxnr" title="pxnr" cols ="3" rows="1"/>
+		<fieldTitles name="pxdd" title="pxdd" cols ="3" rows="2"/>
+		<fieldTitles name="skjs" title="skjs" cols ="9" rows="1"/>
+		<fieldTitles name="pxsj" title="pxsj" cols ="9" rows="2"/>
+		<field name="xh" title="序号"/>
+		<field name="bmrs" title="部门/人数" rowsMerge="YES"/>
+		<field name="xm" title="姓名"/>
+		<field name="gh" title="工号"/>
+		<field name="qddm" title="签到/点名"/>
+		<field name="bz" title="备注"/>
+	</excel>
+	<!--本科各专业集中实践教学课程完成情况汇总-->
+	<excel id="bkgzyjzsdwcqk" class="com.basefrm.entity.Bkgzy_Jzsd_Wcqk" sheetname="本科各专业集中实践教学课程完成情况汇总"  tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="2" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="xq" title="学期" cols ="0" rows="0" keyValue="(0,13)"/>
+		<field name="xh" title="序号"/>
+		<field name="xymc" title="学院" rowsMerge="YES"/>
+		<field name="zymc" title="专业" rowsMerge="YES"/>
+		<field name="nj" title="年级" rowsMerge="YES"/>
+		<field name="dyxq" title="对应学期" rowsMerge="YES"/>
+		<field name="xf" title="学分" rowsMerge="YES"/>
+		<field name="zxrq" title="执行日期"/>
+		<field name="xjrs" title="学籍人数" rowsMerge="YES"/>
+		<field name="sxlx" title="实习类型" rowsMerge="YES"/>
+		<field name="cd" title="场地"/>
+		<field name="sxxs" title="实习形式" rowsMerge="YES"/>
+		<field name="rs" title="人数" />
+		<field name="ssrs" title="实施人数" rowsMerge="YES"/>
+		<field name="ddsl" title="地点数量" rowsMerge="YES"/>
+		<field name="ddmc" title="详细地点名称" rowsMerge="YES"/>
+		<field name="sxjs" title="带习教师"/>
+		<field name="jdy" title="辅导员"/>
+		<field name="bz" title="备注" rowsMerge="YES"/>
+	</excel>
+</excels>

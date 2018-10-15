@@ -1,0 +1,55 @@
+server:
+  port: 8090 #端口号
+  context-path: /excelutil #web项目访问名
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@192.168.0.5:1521:orcl11g
+    username: p+MQFmt3deXYwz+KGZ+GvA==
+    password: p+MQFmt3deXYwz+KGZ+GvA==
+    # 下面为连接池的补充设置，应用到上面所有数据源中
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,log4j
+    logSlowSql: true
+    http:
+          multipart:
+            maxFileSize: 10Mb
+            maxRequestSize: 100Mb
+jpa:
+  show-sql: true
+  properties:
+    hibernate:
+      format_sql: true
+      use_sql_comments: flase
+      packageScan: com.basefrm.entity
+      dialect: org.hibernate.dialect.Oracle10gDialect
+#在导入的时候传递一个multivalidate参数即可(true)。通过ExcelImportResult的getErrors方法，可以获取错误的结果信息。默认(false)还是抛出ExcelException
+error:
+  multivalidate:
+           value: true
+file:
+  excel:
+    basePath: d://uploadFiles/
+excel:
+  nums: 20  #每20条数据更改一次session值

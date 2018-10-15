@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excels>
+	<!-- excel标签参看:ExcelDefinition,Field标签参看:FieldValue -->
+     <!-- Xml 中的lineRow是必填项默认为1-->
+	<!-- 测试学科竞赛-->
+	<excel id="jingsai" class="com.basefrm.entity.StudentModel"
+		   sheetname="省部级竞赛获奖汇总" enableStyle="true" defaultAlign="center" sheetIndex="0" lineRow="1" titleIndex="0" >
+		<field name="id" title="ID" align="center" titleBgColor="dark_blue" uniformStyle="true"
+			   titleFountColor="white"/>
+		<field name="name" title="竞赛名称" uniformStyle="true" columnWidth="3000"/>
+	</excel>
+	<!-- Xml 中的lineRow是必填项默认为1;titleIndex默认为0-->
+	<!-- 测试使用 ,学生类-->
+	<excel id="student" class="com.basefrm.entity.Studentmodel2"
+	sheetname="测试学生列表" enableStyle="true" defaultAlign="center" tableType="hb" sheetIndex="0"   lineRow="1" titleIndex="0" needReadTitle="NO">
+		<!--<fieldTitles  name="id" cols ="1" rows="5" title="测试名称"/>-->
+		<!--<fieldTitles name="types" cols ="1" rows="5" title="类型"/>-->
+		<fieldTitles name="type"  cols ="4" rows="1" title="数据类型"  keyValue="(0,15)"/>
+		<fieldTitles name="sex"  cols ="6" rows="0" title="性别" />
+		<!--needReadTitle="YES"-->
+		<field name="id" cols ="1" rows="5" title="ID" align="center" titleBgColor="dark_blue" uniformStyle="true"
+		columnWidth="3000" titleFountColor="white"/>
+		<!--KeyValue="XNXQ,1,1,0,9"-->
+		<field name="name" cols ="4" rows="5" rowsMerge="YES"  title="学生姓名" uniformStyle="true"/>
+		<!--<field name="cshbl" cols ="4" rows="5" colsMerge="YES"  title="测试合并列" uniformStyle="true"/>-->
+		<field name="age" cols ="7" rows="5" title="年龄" align="center" titleFountColor="red" titleBgColor="dark_blue" isNull="false" regex="^[1-9]\d*$" regexErrMsg="必须是数字"/>
+		<field name="studentno" cols ="7" rows="7" title="学号" titleFountColor="blue" isNull="false" />
+		<field name="createtime" cols ="7" rows="8" columnWidth="4000" title="创建时间" pattern="yyyy-MM-dd"/>
+		<field name="status" cols ="2" rows="9" title="状态" titleBgColor="green" format="1:正常,0:禁用,-1:无效" />
+		<!-- 创建人,可能需要查询数据库校验,这里使用自定义解析器 -->
+		<!--<field name="createuser" cols ="5" rows="9" title="创建人"   isNull="false" />-->
+		<field name="createuser" cols ="5" rows="9" title="创建人" cellValueConverter="com.basefrm.converter.CreateUserCellValueConverter"  isNull="false" otherConfig="Test动态传递的一个变量"/>
+		<!-- 复杂对象 -->
+		<!--<field name="book.bookName" title="图书名称" columnWidth="6000"/>-->
+		<!--<field name="book.price" title="图书价格" columnWidth="6000" decimalFormatPattern="###,##0.00" roundingMode="up" defaultValue="0.00"/>-->
+		<!--<field name="book.author.authorName" title="作者名称" columnWidth="6000"/>-->
+		<!--<field name="sex" cols ="2" rows="7" title="性别" cellValueConverter="com.basefrm.converter.GenderValueConverter" cellValueConfig="f_get_zd_mcTodm('GB_XB','?')" callType="FUNCTION" otherConfig="测试FUCTION"/>-->
+	</excel>
+	
+	<excel id="student2" class="com.basefrm.entity.StudentModel">
+		<field name="id" title="ID"/>
+		<field name="name" title="学生姓名"/>
+		<field name="age" title="年龄" isNull="false" regex="^[1-9]\d*$" regexErrMsg="必须是数字"/>
+		<field name="studentNo" title="学号" isNull="false" />
+		<field name="createTime" title="创建时间" pattern="yyyy-MM-dd"/>
+		<field name="status" title="状态" format="1:正常,0:禁用,-1:无效" />
+		<field name="createUser" title="创建人"/>
+		<!-- 复杂对象 -->
+		<field name="book.bookName" title="图书名称" />
+		<field name="book.author.authorName" title="作者名称" isNull="false"/>
+	</excel>
+	<!-- ExcelXmlBuilder 生成的配置文件 -->
+	<excel id="student3" class="com.basefrm.entity.StudentModel" sheetname="学生信息列表" defaultColumnWidth="5000" enableStyle="true">
+		<field name="id" title="id" isNull="true" uniformStyle="true" columnWidth="5000" align="left" regex="" regexErrMsg="id不合法"/>
+		<field name="createTime" title="createTime" pattern="yyyy/MM/dd" isNull="true" uniformStyle="true" columnWidth="5000" align="left" regex="" regexErrMsg="createTime不合法"/>
+		<field name="name" title="name" isNull="true" uniformStyle="true" columnWidth="5000" align="left" regex="" regexErrMsg="name不合法"/>
+		<field name="age" title="age" isNull="true" uniformStyle="true" columnWidth="5000" align="left" regex="" regexErrMsg="age不合法"/>
+		<field name="studentNo" title="studentNo" isNull="true" uniformStyle="true" columnWidth="5000" align="left" regex="" regexErrMsg="studentNo不合法"/>
+		<field name="createUser" title="createUser" isNull="true" uniformStyle="true" columnWidth="5000" align="left" regex="" regexErrMsg="createUser不合法"/>
+		<field name="createUserId" title="createUserId" isNull="true" uniformStyle="true" columnWidth="5000" align="left" regex="" regexErrMsg="createUserId不合法"/>
+		<field name="status" title="status" isNull="true" uniformStyle="true" columnWidth="5000" align="left" regex="" regexErrMsg="status不合法"/>
+		<field name="book.bookName" title="book.bookName" isNull="true" uniformStyle="true" columnWidth="5000" align="left" regex="" regexErrMsg="book.bookName不合法"/>
+		<field name="book.author.authorName" title="book.author.authorName" isNull="true" uniformStyle="true" columnWidth="5000" align="left" regex="" regexErrMsg="book.author.authorName不合法"/>
+	</excel>
+
+
+	
+</excels>

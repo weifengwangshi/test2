@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excels>
+	<!-- Xml 中的lineRow是必填项默认为1;titleIndex默认为0-->
+	<!-- 测试使用 ,学生类-->
+	<excel id="student" class="com.basefrm.entity.Studentmodel2"
+	 sheetname="测试学生列表" enableStyle="true" defaultAlign="center" tableType="hb" sheetIndex="0"   lineRow="1" titleIndex="0" needReadTitle="NO">
+		<fieldTitles  name="id" cols ="1" rows="5" title="测试名称"/>
+		<fieldTitles name="types" cols ="1" rows="5" title="类型"/>
+		<fieldTitles name="type"  cols ="4" rows="1" title="数据类型"  keyValue="(0,15)"/>
+		<fieldTitles name="sex"  cols ="6" rows="0" title="性别" />
+		<!--needReadTitle="YES"-->
+		<field name="id" cols ="1" rows="5" title="ID" align="center" titleBgColor="dark_blue" uniformStyle="true"
+		columnWidth="3000" titleFountColor="white"/>
+		<!--KeyValue="XNXQ,1,1,0,9"-->
+		<field name="name" cols ="4" rows="5" rowsMerge="YES"  title="学生姓名" uniformStyle="true"/>
+		<!--<field name="cshbl" cols ="4" rows="5" colsMerge="YES"  title="测试合并列" uniformStyle="true"/>-->
+		<field name="age" cols ="7" rows="5" title="年龄" align="center" titleFountColor="red" titleBgColor="dark_blue" isNull="false" regex="^[1-9]\d*$" regexErrMsg="必须是数字"/>
+		<field name="studentno" cols ="7" rows="7" title="学号" titleFountColor="blue" isNull="false" />
+		<field name="createtime" cols ="7" rows="8" columnWidth="4000" title="创建时间" pattern="yyyy-MM-dd"/>
+		<field name="status" cols ="2" rows="9" title="状态" titleBgColor="green" format="1:正常,0:禁用,-1:无效" />
+		<!-- 创建人,可能需要查询数据库校验,这里使用自定义解析器 -->
+		<field name="createuser" cols ="5" rows="9" title="创建人"   isNull="false" />
+		<!--<field name="createuser" cols ="5" rows="9" title="创建人" cellValueConverter="com.basefrm.converter.GenderValueConverter"  isNull="false" otherConfig="测试变量"/>-->
+		<!-- 复杂对象 -->
+		<!--processType-->
+		<!--<field name="sex" cols ="2" rows="7" title="性别" cellValueConverter="com.basefrm.converter.GenderValueConverter" cellValueConfig="f_get_zd_mcTodm（'GB_XB','?')" callType="FUNCTION" otherConfig="测试FUCTION" processType="REPLACE"/>-->
+	</excel>
+	<!--高职院系兼职教师信息统计表--><!--001Z-2017-2018-1高职院系兼职教师信息统计表.xls-->
+	<excel id="gxyxjzjsxx" class="com.basefrm.entity.Gxyx_Jzjsxx" sheetname="高职院系兼职教师信息统计表" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles  cols ="0" rows="0" name="tjsj" title="统计时间"  keyValue="(0,15)"/>
+		<field name="xh" title="序号"/>
+		<field name="yxmc" title="院系"/>
+		<field name="gh" title="工号"/>
+		<field name="xm" title="姓名"/>
+		<field name="xb" title="性别"/>
+		<!--<field name="xb" title="性别" cellValueConverter="com.basefrm.converter.GenderValueConverter" cellValueConfig="f_get_zd_mcTodm('GB_XB','?')" callType="FUNCTION" otherConfig="测试FUCTION" processType="REPLACE"/>-->
+		<!--<field name="mz" title="民族" cellValueConverter="com.basefrm.converter.GenderValueConverter" cellValueConfig="textexcel（'XZJDB')" callType="PROCEDURE" otherConfig="测试PROCEDURE" processType="CHECK"/>-->
+		<field name="mz" title="民族"/>
+		<field name="jg" title="籍贯"/>
+		<field name="zzmm" title="政治面貌"/>
+		<field name="sfzhm" title="身份证号"/>
+		<field name="byyx" title="毕业院校"/>
+		<field name="xl" title="学历"/>
+		<field name="xw" title="学位"/>
+		<field name="zw" title="职务"/>
+		<field name="zc" title="职称"/>
+		<field name="jslb" title="教师类别(专职/兼职)"/>
+		<field name="rkkc" title="任课课程"/>
+		<field name="sfssx" title="是否双师型" />
+		<field name="lxsj" title="来校时间"/>
+		<field name="lxfs" title="联系方式"/>
+	</excel>
+	<!--二期卓越教师考勤表--><!--004Z2卓二期教师培训考勤表.xlsx-->
+	<excel id="zzyjskqbrq" class="com.basefrm.entity.Zyjskqb_Rq" sheetname="二期卓越教师考勤表" tableType="hb"  sheetIndex="1"  lineRow="2" titleIndex="3" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="pxnr" title="pxnr" cols ="3" rows="1"/>
+		<fieldTitles name="pxdd" title="pxdd" cols ="3" rows="2"/>
+		<fieldTitles name="skjs" title="skjs" cols ="9" rows="1"/>
+		<fieldTitles name="pxsj" title="pxsj" cols ="9" rows="2"/>
+		<field name="xh" title="序号"/>
+		<field name="bmrs" title="部门/人数" rowsMerge="YES"/>
+		<field name="xm" title="姓名"/>
+		<field name="gh" title="工号"/>
+		<field name="qddm" title="签到/点名"/>
+		<field name="bz" title="备注"/>
+	</excel>
+	<!--本科各专业集中实践教学课程完成情况汇总--><!--012Z2实习统计表.xlsx-->
+	<excel id="bkgzyjzsdwcqk" class="com.basefrm.entity.Bkgzy_Jzsd_Wcqk" sheetname="本科各专业集中实践教学课程完成情况汇总"  tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="2" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="xq" title="学期" cols ="0" rows="0" keyValue="(0,13)"/>
+		<field name="xh" title="序号"/>
+		<field name="xymc" title="学院" rowsMerge="YES"/>
+		<field name="zymc" title="专业" rowsMerge="YES"/>
+		<field name="nj" title="年级" rowsMerge="YES"/>
+		<field name="dyxq" title="对应学期" rowsMerge="YES"/>
+		<field name="xf" title="学分" rowsMerge="YES"/>
+		<field name="zxrq" title="执行日期"/>
+		<field name="xjrs" title="学籍人数" rowsMerge="YES"/>
+		<field name="sxlx" title="实习类型" rowsMerge="YES"/>
+		<field name="cd" title="场地"/>
+		<field name="sxxs" title="实习形式" rowsMerge="YES"/>
+		<field name="rs" title="人数" />
+		<field name="ssrs" title="实施人数" rowsMerge="YES"/>
+		<field name="ddsl" title="地点数量" rowsMerge="YES"/>
+		<field name="ddmc" title="详细地点名称" rowsMerge="YES"/>
+		<field name="sxjs" title="带习教师"/>
+		<field name="jdy" title="辅导员"/>
+		<field name="bz" title="备注" rowsMerge="YES"/>
+	</excel>
+	<!--2017-2018学年第1学期兼职教师信息表--><!--001A-兼职教师信息表.xlsx-->
+	<excel id="jzjsxxb" class="com.basefrm.entity.Jzjs_Xxb" sheetname="兼职教师信息表" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="xn" title="学年" cols ="0" rows="0" keyValue="(0,11)"/>
+		<fieldTitles name="xq" title="学期" cols ="0" rows="0" keyValue="(12,15)"/>
+		<field name="xh" title="序号"/>
+		<field name="yxdm" title="院系代码"/>
+		<field name="yxmc" title="院系名称"/>
+		<field name="gh" title="工号"/>
+		<field name="xm" title="姓名"/>
+		<field name="xb" title="性别"/>
+		<field name="mz" title="名族"/>
+		<field name="jg" title="籍贯"/>
+		<field name="zzmm" title="政治面貌"/>
+		<field name="sfzhm" title="身份证号"/>
+		<field name="byyx" title="毕业院校"/>
+		<field name="xl" title="学历"/>
+		<field name="xw" title="学位"/>
+		<field name="zw" title="职务"/>
+		<field name="zc" title="职称"/>
+		<field name="jslb" title="教师类别(外聘/代课)"/>
+		<field name="lxsj" title="来校时间"/>
+		<field name="lxfs" title="联系方式"/>
+	</excel>
+	<!--2017-2018学年第1学期特殊教师类别信息表--><!--001B-特殊教师类别信息表.xlsx-->
+	<excel id="tsjslbxxb" class="com.basefrm.entity.Tsjs_lb_xxb" sheetname="特殊教师类别信息表" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="xn" title="学年" cols ="0" rows="0" keyValue="(0,11)"/>
+		<fieldTitles name="xq" title="学期" cols ="0" rows="0" keyValue="(12,15)"/>
+		<field name="gh" title="工号"/>
+		<field name="tslb" title="特殊类别"/>
+		<field name="tslbmc" title="特殊类别"/>
+		<field name="xh" title="序号"/>
+	</excel>
+	<!--2018届毕业生毕业论文指导情况表--><!--003B毕业生毕业论文指导情况表.xlsx-->
+	<excel id="bysbylwzdqk" class="com.basefrm.entity.Bysby_Lwzdqk" sheetname="毕业生毕业论文指导情况表"  tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="byjq" title="毕业届期" cols ="0" rows="0" keyValue="(0,11)"/>
+		<field name="yxdm" title="院系代码"/>
+		<field name="yxmc" title="院系名称"/>
+		<field name="zydm" title="专业代码"/>
+		<field name="zymc" title="专业名称"/>
+		<field name="bjdm" title="班级代码"/>
+		<field name="bjmc" title="班级名称"/>
+		<field name="xh" title="学号"/>
+		<field name="xsxm" title="学生姓名"/>
+		<field name="lwtmbm" title="论文题目编码"/>
+		<field name="lwtm" title="论文题目"/>
+		<field name="ktrq" title="开题日期"/>
+		<field name="tmsfbg" title="题目是否变更"/>
+		<field name="bgrq" title="变更日期"/>
+		<field name="gh" title="工号"/>
+		<field name="zdjsxm" title="指导教师姓名"/>
+		<field name="zdjdpdcj" title="指导教师评定成绩"/>
+		<field name="pyjspdcj" title="评阅教师评定成绩"/>
+		<field name="dbcj" title="答辩成绩"/>
+		<field name="cjdj" title="成绩等级"/>
+		<field name="xhs" title="序号"/>
+	</excel>
+	<!--2017-2018学年第1学期专业核心课信息表--><!--002A专业核心课程信息表.xlsx-->
+	<excel id="zyhxkxxb" class="com.basefrm.entity.Zyhxk_Xxb" sheetname="专业核心课信息表"  tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="xn" title="学年" cols ="0" rows="0" keyValue="(0,11)"/>
+		<fieldTitles name="xq" title="学期" cols ="0" rows="0" keyValue="(12,15)"/>
+		<field name="yxdm" title="院系代码"/>
+		<field name="yxmc" title="院系名称"/>
+		<field name="kcbm" title="课程编码"/>
+		<field name="kcmc" title="课程名称"/>
+		<field name="tskclb" title="特殊课程类别"/>
+		<field name="tskclbmc" title="特殊课程类别名称"/>
+		<field name="xh" title="序号"/>
+	</excel>
+	<!--2018届毕业生毕业论文题目信息表--><!--003A毕业论文题目信息表.xlsx-->
+	<excel id="bysbylwtmxx" class="com.basefrm.entity.Bysby_Lwtmxx" sheetname="毕业生毕业论文题目信息表"  tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES"  defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="byjq" title="byjq"  cols ="0" rows="0" keyValue="(0,5)"/>
+		<field name="yxdm" title="院系代码"/>
+		<field name="yxmc" title="院系名称"/>
+		<field name="zydm" title="专业代码"/>
+		<field name="zymc" title="专业明层"/>
+		<field name="lwtmbm" title="论文题目编码"/>
+		<field name="lwtm" title="论文题目"/>
+		<field name="tmlx" title="题目类型"/>
+		<field name="zlx" title="子类型"/>
+		<field name="tmly" title="题目来源"/>
+		<field name="xh" title="序号"/>
+	</excel>
+	<!--教师培训情况信息表--><!--004A教师培训情况.xlsx-->
+	<excel id="jspxqkxx" class="com.basefrm.entity.Jspx_Qkxx" sheetname="教师培训情况信息表" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="2" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="pxsj" title="pxsj" cols ="1" rows="1" />
+		<fieldTitles name="pxqs" title="pxqs" cols ="7" rows="1" />
+		<fieldTitles name="pxlb" title="pxlb" cols ="5" rows="1" />
+		<field name="yxdm" title="yxdm"/>
+		<field name="yxmc" title="yxmc"/>
+		<field name="gh" title="gh"/>
+		<field name="jsxm" title="jsxm"/>
+		<field name="cj" title="cj"/>
+		<field name="pxxg" title="pxxg"/>
+		<field name="bz" title="bz"/>
+		<field name="xh" title="xh"/>
+	</excel>
+	<!--教研项目信息一览表--><!--005A教研项目情况.xlsx-->
+	<excel id="jyxmxxylb" class="com.basefrm.entity.Jyxm_Xxylb" sheetname="教研项目信息一览表" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xmbm" title="项目编号"/>
+		<field name="xmmc" title="项目名称"/>
+		<field name="kssj" title="开始时间"/>
+		<field name="gh" title="工号"/>
+		<field name="zcr" title="支持人"/>
+		<field name="gh1" title="工号1"/>
+		<field name="cyr1" title="参与人1"/>
+		<field name="gh2" title="工号2"/>
+		<field name="cyr2" title="参与人2"/>
+		<field name="gh3" title="工号3"/>
+		<field name="cyr3" title="参与人3"/>
+		<field name="dwdm" title="单位单位代码"/>
+		<field name="ssdw" title="所属单位"/>
+		<field name="jsjf" title="建设经费"/>
+		<field name="sdjt" title="对否结题"/>
+		<field name="xh" title="序号"/>
+	</excel>
+	<!--教学获奖信息一览表--><!--006A教学获将情况.xlsx-->
+	<excel id="jxhjxxylb" class="com.basefrm.entity.Jxhj_Xxylb" sheetname="教学获奖信息一览表" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="cgbm" title="成果编号"/>
+		<field name="cgmc" title="成果名称"/>
+		<field name="hjsj" title="获奖时间"/>
+		<field name="gh" title="工号"/>
+		<field name="wcr" title="完承认"/>
+		<field name="gh1" title="工号1"/>
+		<field name="cyr1" title="参与人1"/>
+		<field name="gh2" title="工号2"/>
+		<field name="cyr2" title="参与人2"/>
+		<field name="gh3" title="工号3"/>
+		<field name="cyr3" title="参与人3"/>
+		<field name="dwdm" title="单位代码"/>
+		<field name="ssdw" title="所属单位"/>
+		<field name="hjdj" title="获奖等级"/>
+		<field name="xh" title="序号"/>
+	</excel>
+	<!--2017-2018学年第2学期西京学院课程建设信息一览表--><!--007A课程建设情况.xls-->
+	<excel id="kcjsxxylb" class="com.basefrm.entity.Kcjs_Xxylb" sheetname="西京学院课程建设信息一览表" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="xn" title="学年" cols ="0" rows="0" keyValue="(0,11)"/>
+		<fieldTitles name="xq" title="学期" cols ="0" rows="0" keyValue="(11,15)"/>
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="gh" title="工号" />
+		<field name="sjxm" title="教师姓名" />
+		<field name="kcbm" title="课程编码" />
+		<field name="kcmc" title="课程名称" />
+		<field name="kcbm2" title="课程编码2" />
+		<field name="kcjslb" title="课程建设类别" />
+		<field name="jszl" title="建设质量" />
+		<field name="sssy" title="是否使用" />
+		<field name="xh" title="序号" />
+	</excel>
+	<!--计算机等级考试成绩--><!--008A计算机等级考试成绩.xls-->
+	<excel id="jsjdjkscj" class="com.basefrm.entity.Jsjdj_Kscj" sheetname="计算机等级考试成绩" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zydm" title="专业代码" />
+		<field name="zymc" title="专业名称" />
+		<field name="xh" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="dj" title="等级" />
+		<field name="cj" title="成绩" />
+		<field name="sshg" title="是否合格" />
+		<field name="xhs" title="序号" />
+	</excel>
+	<!--计算机软件考试成绩--><!--009A计算机软件考试成绩.xls-->
+	<excel id="jsjrjkscj" class="com.basefrm.entity.Jsjrj_Kscj" sheetname="计算机软件考试成绩"  tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zydm" title="专业代码" />
+		<field name="zymc" title="专业名称" />
+		<field name="xh" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="zgdj" title="资格等级" />
+		<field name="cj" title="成绩" />
+		<field name="sshg" title="是否合格" />
+		<field name="xhs" title="序号" />
+	</excel>
+	<!--英语等级考试成绩--><!--010A英语考试成绩.xls-->
+	<excel id="yydjkscj" class="com.basefrm.entity.Yydj_Kscj" sheetname="英语等级考试成绩" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zydm" title="专业代码" />
+		<field name="zymc" title="专业名称" />
+		<field name="xh" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="dj" title="等级" />
+		<field name="cj" title="成绩" />
+		<field name="sshg" title="是否合格" />
+		<field name="xhs" title="序号" />
+	</excel>
+	<!--201*-201*学年第*学期大学生竞赛赛事信息--><!--011A大学生竞赛赛事信息.xls-->
+	<excel id="dxsjsssxx" class="com.basefrm.entity.Dxsjs_Ssxx" sheetname="大学生竞赛赛事信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="xn" title="学年" cols ="0" rows="0" keyValue="(0,11)"/>
+		<fieldTitles name="xq" title="学期" cols ="0" rows="0" keyValue="(11,15)"/>
+		<field name="jsbm" title="竞赛编码" />
+		<field name="jsmc" title="竞赛名称" />
+		<field name="ssjb" title="赛事级别" />
+		<field name="jszbf" title="竞赛主办方" />
+		<field name="lxdh" title="联系电话" />
+		<field name="xmlx" title="项目类型" />
+		<field name="jsgsxklb" title="赛事归属学科类别" />
+		<field name="csxs" title="参赛形式" />
+		<field name="bz" title="备注" />
+		<field name="xh" title="序号" />
+	</excel>
+	<!--大学生竞赛参赛人员信息表--> <!--011B大学生竞赛参赛人员.xls-->
+	<excel id="dxsjscsryxx" class="com.basefrm.entity.Dxsjs_Csryxx" sheetname="大学生竞赛参赛人员信息表" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="jsbm" title="竞赛编码" />
+		<field name="xh" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="sfzzz" title="是否组织者" />
+		<field name="bz" title="备注" />
+		<field name="xhs" title="序号" />
+	</excel>
+	<!--大学生竞赛指导教师--> <!--011C大学生竞赛指导教师.xls-->
+	<excel id="dxsjszdjs" class="com.basefrm.entity.Dxsjs_Zdjs" sheetname="大学生竞赛指导教师" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="jsbm" title="竞赛编码" />
+		<field name="zdjsgh" title="指导教师工号" />
+		<field name="zdjsxm" title="指导教师姓名" />
+		<field name="szyxdm" title="所在院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="cjzydm" title="从教专业代码" />"
+		<field name="cjzymc" title="从教专业名称" />"
+		<field name="zc" title="职称" />
+		<field name="bz" title="备注" />
+		<field name="xh" title="序号" />
+	</excel>
+	<!--大学生竞赛获奖情况--> <!--011D大学生竞赛获奖情况.xls-->
+	<excel id="dxsjshjqks" class="com.basefrm.entity.Dxsjs_Hjqks" sheetname="大学生竞赛获奖情况" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="jsbm" title="竞赛编码" />
+		<field name="hjjb" title="获奖级别" />
+		<field name="hjdj" title="获奖等级" />
+		<field name="bz" title="备注" />
+		<field name="xh" title="序号" />
+	</excel>
+	<!--校企合作信息--><!--012A校企合作信息.xls-->
+	<excel id="xqhzxx" class="com.basefrm.entity.Xqhzxx" sheetname="校企合作信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="qydm" title="企业代码" />
+		<field name="qymc" title="企业名称" />
+		<field name="qyxz" title="企业性质" />
+		<field name="szsf" title="所在省份" />
+		<field name="qygm" title="企业规模" />
+		<field name="qydz" title="企业地址" />
+		<field name="hzxs" title="合作形式" />
+		<field name="mnkjsxss" title="每年可接受学生数" />
+		<field name="qdsj" title="签订时间" />
+		<field name="jzrq" title="截止日期" />
+		<field name="yxq" title="有效期" />
+		<field name="lxfs" title="联系方式" />
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zydm" title="专业代码" />
+		<field name="mqzy" title="面向专业" />
+		<field name="xxyjr" title="学校引荐人" />
+		<field name="bz" title="备注" />
+		<field name="xh" title="序号" />
+	</excel>
+	<!--2017-2018第2学期大学生实习项目--><!--012B实习项目.xls-->
+	<excel id="Dxs_Sx_Xm" class="com.basefrm.entity.Dxs_Sx_Xm" sheetname="大学生实习项目" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="xn" title="学年" cols ="0" rows="0" keyValue="(0,9)"/>
+		<fieldTitles name="xq" title="学期" cols ="0" rows="0" keyValue="(9,13)"/>
+		<field name="sxxmbm" title="实习项目编码" />
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zydm" title="专业代码" />
+		<field name="zymc" title="专业名称" />
+		<field name="nj" title="年级" />
+		<field name="xf" title="学分" />
+		<field name="dyxq" title="对应学期" />
+		<field name="qsrq" title="起始日期" />
+		<field name="jsrq" title="结束日期" />
+		<field name="sxlx" title="实体类型" />
+		<field name="cd" title="场地" />
+		<field name="sxxs" title="实习形式" />
+		<field name="ywsxqy" title="有无实习企业" />
+		<field name="qydm" title="企业代码" />
+		<field name="qymc" title="企业名称" />
+		<field name="sxdd" title="实习地点" />
+		<field name="dxls" title="带习老师" />
+		<field name="fdy" title="辅导员" />
+		<field name="bz" title="备注" />
+		<field name="xh" title="序号" />
+	</excel>
+	<!--2017-2018第2学期学生实习情况--><!--012C实习情况.xls-->
+	<excel id="Xs_Sx_Qk" class="com.basefrm.entity.Xs_Sx_Qk" sheetname="学生实习情况" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="xn" title="学年" cols ="0" rows="0" keyValue="(0,9)"/>
+		<fieldTitles name="xq" title="学期" cols ="0" rows="0" keyValue="(9,13)"/>
+		<field name="sxxmbm" title="实习项目编码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zydm" title="专业代码" />
+		<field name="zymc" title="专业名称" />
+		<field name="xh" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="scfj" title="上传附件" />
+		<field name="bz" title="备注" />
+		<field name="xhs" title="序号" />
+	</excel>
+	<!--大学生创业项目信息--><!--013A大创项目信息.xlsx-->
+	<excel id="Dxs_Cyxm_Xx" class="com.basefrm.entity.Dxs_Cyxm_Xx" sheetname="大学生创业项目信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="dcxmbm" title="大创项目编码" />
+		<field name="dcxmmc" title="大创项目名称" />
+		<field name="xmjb" title="项目级别" />
+		<field name="xmlb" title="项目类别" />
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="xh" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="lxrq" title="立项日期" />
+		<field name="yjjxrq" title="预计结题日期" />
+		<field name="zqjcrq" title="中期检查日期" />
+		<field name="sfjt" title="是否结题" />
+		<field name="sjjtrq" title="实际结题日期" />
+		<field name="cj" title="成绩" />
+		<field name="jl" title="结论" />
+		<field name="bz" title="备注" />
+		<field name="xhs" title="序号" />
+	</excel>
+	<!--订单班情况--><!--021A订单班情况.xlsx-->
+	<excel id="Ddbqk" class="com.basefrm.entity.Ddbqk" sheetname="订单班情况" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="ddbbs" title="订单班标识" />
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zzdm" title="专业代码" />
+		<field name="zymc" title="专业名称" />
+		<field name="xuehao" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="sxcj" title="实习成绩" />
+		<field name="bz" title="备注" />
+	</excel>
+	<!--职业资格证书获取情况--><!--020A职业资格证书获取情况.xlsx-->
+	<excel id="Zyzgzs_Hqqk" class="com.basefrm.entity.Zyzgzs_Hqqk" sheetname="职业资格证书获取情况" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zzdm" title="专业代码" />
+		<field name="zymc" title="专业名称" />
+		<field name="xuehao" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="zsmc" title="证书名称" />
+		<field name="zsbh" title="证书编号" />
+		<field name="scfj" title="上传附件" />
+		<field name="bz" title="备注" />
+	</excel>
+	<!--学分置换情况--><!--018A学分置换情况.xlsx-->
+	<excel id="Xfzh_Qk" class="com.basefrm.entity.Xfzh_Qk" sheetname="学分置换情况" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zzdm" title="专业代码" />
+		<field name="zymc" title="专业名称" />
+		<field name="xuehao" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="kcbm" title="课程编码" />
+		<field name="zhkcmc" title="置换课程名称" />
+		<field name="zhxf" title="置换学分" />
+		<field name="zhyy" title="置换原因" />
+		<field name="scfj" title="上传附件" />
+		<field name="bz" title="备注" />
+	</excel>
+	<!--2017-2018学年第2学期教材使用计划--><!--017A教材使用计划.xlsx-->
+	<excel id="Jcsy_Jh" class="com.basefrm.entity.Jcsy_Jh" sheetname="教材使用计划" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="xn" title="学年" cols ="0" rows="0" keyValue="(0,11)"/>
+		<fieldTitles name="xq" title="学期" cols ="0" rows="0" keyValue="(11,15)"/>
+		<field name="xh" title="xh"/>
+		<field name="yxdm" title="yxdm"/>
+		<field name="yxmc" title="yxmc"/>
+		<field name="zzdm" title="zzdm"/>
+		<field name="zymc" title="zymc"/>
+		<field name="nj" title="nj"/>
+		<field name="bj" title="bj"/>
+		<field name="kcbm" title="kcbm"/>
+		<field name="kcmc" title="kcmc"/>
+		<field name="jcmc" title="jcmc"/>
+		<field name="zz" title="zz"/>
+		<field name="cbs" title="cbs"/>
+		<field name="cbsj" title="cbsj"/>
+		<field name="xssysl" title="xssysl"/>
+		<field name="jssysl" title="jssysl"/>
+		<field name="jcqk" title="jcqk"/>
+		<field name="bz" title="bz"/>
+	</excel>
+	<!--教师授课计划进度信息--><!--016B教师授课计划进度信息.xlsx-->
+	<excel id="Jsskjh_Jdxx" class="com.basefrm.entity.Jsskjh_Jdxx" sheetname="教师授课计划进度信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="3" needReadTitle="YES" defaultColumnWidth="5000" enableStyle="true">
+		<fieldTitles name="skjhbh" title="授课计划编码" cols ="0" rows="0" keyValue="(18,30)"/>
+		<fieldTitles name="yxmc" title="院系名称" cols ="2" rows="1"/>
+		<fieldTitles name="zymc" title="专业名称" cols ="4" rows="1"/>
+		<fieldTitles name="skjs" title="授课教师" cols ="6" rows="1"/>
+		<fieldTitles name="skbj" title="授课班级" cols ="2" rows="2"/>
+		<fieldTitles name="kcmc" title="授课名称" cols ="4" rows="2"/>
+		<fieldTitles name="skdd" title="授课地点" cols ="6" rows="2"/>
+		<field name="xh" title="序号" />
+		<field name="jhsksxh" title="计划授课顺序号" />
+		<field name="jhskrq" title="计划授课日期" />
+		<field name="skzs" title="授课周数" />
+		<field name="jhzj" title="计划章节" />
+		<field name="jhnr" title="计划内容" />
+		<field name="sjsksxh" title="实际授课顺序号" />
+		<field name="bz" title="备注" />
+	</excel>
+
+	<!--教师授课计划信息--><!--016A教师授课计划信息.xlsx-->
+	<excel id="Jsskjhxx" class="com.basefrm.entity.Jsskjhxx" sheetname="教师授课计划信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="skjhbh" title="授课计划编号" />
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zydm" title="专业代码" />
+		<field name="zymc" title="专业名称" />
+		<field name="skbj" title="授课班级" />
+		<field name="gh" title="工号" />
+		<field name="skjs" title="授课教师" />
+		<field name="kcbm" title="课程编号" />
+		<field name="kcmc" title="课程名称" />
+		<field name="skdd" title="授课地点" />
+		<field name="bz" title="备注" />
+	</excel>
+
+	<!--教学计划调整信息--><!--015A教学计划调整信息.xlsx-->
+	<excel id="Jxjhtzxx" class="com.basefrm.entity.Jxjhtzxx" sheetname="教学计划调整信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="zzdm" title="专业代码" />
+		<field name="zymc" title="专业名称" />
+		<field name="kcbm" title="课程编码" />
+		<field name="kcmc" title="课程名称" />
+		<field name="bglb" title="变更类别" />
+		<field name="bgrq" title="变更日期" />
+		<field name="bgyy" title="变更原因" />
+		<field name="bz" title="备注" />
+		<field name="fj" title="附近" />
+	</excel>
+	<!--大学生创业孵化项目指导教师信息--><!--014C大创孵化项目指导教师信息.xlsx-->
+	<excel id="Dxscyfh_Zdjs" class="com.basefrm.entity.Dxscyfh_Zdjs" sheetname="大学生创业孵化项目指导教师信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="dcfhxmbm" title="大创孵化项目编码" />
+		<field name="gh" title="工号" />
+		<field name="zdjsxm" title="指导教师姓名" />
+		<field name="szbmdm" title="所在部门代码" />
+		<field name="szbmmc" title="所在部门名称" />
+		<field name="xl" title="学历" />
+		<field name="zc" title="职称" />
+		<field name="zt" title="状态" />
+		<field name="bz" title="备注" />
+	</excel>
+
+	<!--大学生创业项目结题成果信息--><!--013H大创项目结题成果信息.xlsx-->
+	<excel id="Dcxm_Cgxx" class="com.basefrm.entity.Dcxm_Cgxx" sheetname="大学生创业项目结题成果信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="dcxmbm" title="大创项目编码" />
+		<field name="jtcg" title="结题成果" />
+		<field name="fjxx" title="附加信息" />
+		<field name="bz" title="备注" />
+	</excel>
+
+	<!--大学生创业项目研究周期变更信息--><!--013G大创项目研究周期变更信息.xlsx-->
+	<excel id="Dcxm_Zqbg" class="com.basefrm.entity.Dcxm_Zqbg" sheetname="大学生创业项目研究周期变更信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="dcxmbm" title="大创项目编码" />
+		<field name="jtcg" title="结题成果" />
+		<field name="fjxx" title="附加信息" />
+		<field name="bz" title="备注" />
+	</excel>
+
+	<!--大学生创业项目参与成员变更信息--><!--013F大创项目参与成员变更信息.xlsx-->
+	<excel id="Dcxm_Cybg" class="com.basefrm.entity.Dcxm_Cybg" sheetname="大学生创业项目参与成员变更信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="dcxmbm" title="大创项目编码" />
+		<field name="yxh" title="原学号" />
+		<field name="yxsxm" title="原学生姓名" />
+		<field name="xuehao" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="zt" title="状态" />
+		<field name="bz" title="备注" />
+	</excel>
+
+	<!--大学生创业指导教师变更信息--><!--013E大创项目指导教师变更信息.xlsx-->
+	<excel id="Dxscy_Zdjs_Bgxx" class="com.basefrm.entity.Dxscy_Zdjs_Bgxx" sheetname="大学生创业指导教师变更信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="dcxmbm" title="大创项目编码" />
+		<field name="ygh" title="原工号" />
+		<field name="yzdjsxm" title="原指导教师姓名" />
+		<field name="gh" title="工号" />
+		<field name="zdjsxm" title="指导教师姓名" />
+		<field name="szbmdm" title="所在部门代码" />
+		<field name="szbmmc" title="所在部门名称" />
+		<field name="xl" title="学历" />
+		<field name="zc" title="职称" />
+		<field name="zt" title="状态" />
+		<field name="bz" title="备注" />
+	</excel>
+	<!--大学生创业项目名称变更信息--><!--013D大创项目名称变更信息.xlsx-->
+	<excel id="Dxscy_Xmmc_Bgxx" class="com.basefrm.entity.Dxscy_Xmmc_Bgxx" sheetname="大学生创业项目名称变更信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="dcxmbm" title="大创项目编码" />
+		<field name="xmmcbgw" title="项目名称变更为" />
+		<field name="bz" title="备注" />
+	</excel>
+	<!--大学生创业指导教师信息--><!--013C大创项目指导教师信息.xlsx-->
+	<excel id="Dxscy_Zdjs_Xx" class="com.basefrm.entity.Dxscy_Zdjs_Xx" sheetname="大学生创业指导教师信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xh" title="序号" />
+		<field name="dcxmbm" title="大创项目编码" />
+		<field name="gh" title="工号" />
+		<field name="zdjsxm" title="指导教师姓名" />
+		<field name="szbmdm" title="所在部门代码" />
+		<field name="dzbmmc" title="所在部门名称" />
+		<field name="xl" title="学历" />
+		<field name="zc" title="职称" />
+		<field name="zt" title="状态" />
+		<field name="bz" title="备注" />
+	</excel>
+	<!--大学生创业项目参与成员信息--><!--013B大创项目参与成员信息.xlsx-->
+	<excel id="Dxscy_Xmcy_Cyxx" class="com.basefrm.entity.Dxscy_Xmcy_Cyxx" sheetname="大学生创业项目参与成员信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xhs" title="序号" />
+		<field name="dcxmbm" title="大创项目编码" />
+		<field name="xh" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="zt" title="状态" />
+		<field name="bt" title="备注" />
+	</excel>
+
+	<!--大学生创业孵化项目参与成员信息--><!--014B大创孵化项目参与成员信息.xlsx-->
+	<excel id="Dxscy_Fhxmcy_Cyxx" class="com.basefrm.entity.Dxscy_Fhxmcy_Cyxx" sheetname="大学生创业孵化项目参与成员信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xhs" title="序号" />
+		<field name="dcfhxmbm" title="大创孵化项目编码" />
+		<field name="xh" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="zt" title="状态" />
+		<field name="bz" title="备注" />
+	</excel>
+
+	<!--大创孵化项目信息--><!--014A大创孵化项目信息 - 副本.xlsx-->
+	<excel id="Dc_Fh_Xmxx" class="com.basefrm.entity.Dc_Fh_Xmxx" sheetname="大创孵化项目信息" tableType="hb"  sheetIndex="0"  lineRow="1" titleIndex="1" defaultColumnWidth="5000" enableStyle="true">
+		<field name="xhs" title="序号" />
+		<field name="dcfhxmbm" title="大创孵化项目编码" />
+		<field name="dcfhcmmc" title="大创孵化项目名称" />
+		<field name="rzpc" title="入驻批次" />
+		<field name="rzsj" title="入驻时间" />
+		<field name="yxdm" title="院系代码" />
+		<field name="yxmc" title="院系名称" />
+		<field name="xh" title="学号" />
+		<field name="xsxm" title="学生姓名" />
+		<field name="xmyxzt" title="项目运行状态" />
+		<field name="cfrq" title="出孵日期" />
+		<field name="cfjl" title="出孵结论" />
+		<field name="bt" title="备注" />
+	</excel>
+</excels>

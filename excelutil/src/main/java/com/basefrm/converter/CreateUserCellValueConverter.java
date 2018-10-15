@@ -1,0 +1,88 @@
+package com.basefrm.converter;
+
+import com.basefrm.dao.IBaseDao;
+import com.basefrm.dao.Impl.BaseDaoImpl;
+import com.basefrm.entity.Studentmodel1;
+import com.basefrm.excel.config.FieldTitleValue;
+import com.basefrm.excel.config.FieldValue;
+import com.basefrm.excel.exception.ExcelException;
+import com.basefrm.excel.parsing.CellValueConverter;
+import com.basefrm.util2.SpringUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+/**
+ * 自定义转换,测试学生创建人
+ * @author lisuo
+ *
+ */
+@Component
+//,与spring集成之后可以使用
+public class CreateUserCellValueConverter implements CellValueConverter {
+//	@Autowired
+//	private IBaseDao baseDao;
+	@Override
+	public Object convert(Object bean, Object value, FieldValue fieldValue, Type type, int rowNum)throws Exception {
+		System.out.println("测试动态获取OtherConfig的值："+fieldValue.getOtherConfig());
+		//如果是导入
+		if(type== Type.IMPORT){
+			if(queryForDb(value.toString())){
+				//这里可以重新对对象进行设置
+				// 进行数值校验  --- 调用函数  --- 调用过程
+				//Studentmodel1 stu = (Studentmodel1) bean;
+				//stu.setStudentno("1102060223");
+				//value = "123456789";
+				//stu.setCreateUserId(xx);
+				return value;
+			}else{
+				StringBuilder err = new StringBuilder()
+						.append("第[").append(rowNum).append("行],[")
+						.append(fieldValue.getTitle()).append("]")
+						.append("在数据库中没有找到["+value.toString()+"]的用户信息");
+				//System.out.println(err.toString());
+				throw new ExcelException(err.toString());
+			}
+		}else{
+			System.out.println("第【"+rowNum+"】行Cell数据被创建");
+		}
+		return value;
+	}
+	@Override
+	public Object convert(Object bean, Object value, FieldTitleValue fieldValue, Type type, int rowNum)throws Exception {
+		System.out.println("测试动态获取OtherConfig的值："+fieldValue.getOtherConfig());
+		//如果是导入
+		if(type== Type.IMPORT){
+			if(queryForDb(value.toString())){
+				//这里可以重新对对象进行设置
+				// 进行数值校验  --- 调用函数  --- 调用过程
+				//Studentmodel1 stu = (Studentmodel1) bean;
+				//stu.setStudentno("1102060223");
+				//value = "123456789";
+				//stu.setCreateUserId(xx);
+				return value;
+			}else{
+				StringBuilder err = new StringBuilder()
+						.append("第[").append(rowNum).append("行],[")
+						.append(fieldValue.getTitle()).append("]")
+						.append("在数据库中没有找到["+value.toString()+"]的用户信息");
+				//System.out.println(err.toString());
+				throw new ExcelException(err.toString());
+			}
+		}else{
+			System.out.println("第【"+rowNum+"】行Cell数据被创建");
+		}
+		return value;
+	}
+	
+	//模拟查询数据库
+	//具体的调用方法
+	private boolean queryForDb(String createUser){
+		if(createUser.startsWith("王五")){
+			//System.out.println("数据库有查询到王五,发生在org.easy.excel.test.converter.CreateUserCellValueConverter");
+			System.out.println("格式有问题！不能导入！！！！！！");
+			return true;
+		}
+		return false;
+	}
+	
+}

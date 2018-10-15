@@ -1,0 +1,176 @@
+/*��ർ����ʽ*/
+.nav-header{
+	list-style:none;
+    text-align: center;
+    padding: 33px 25px 10px 25px;
+  /*   background: url("../images/bg_backend_avatar.png") no-repeat 0 0; */
+  	background:#1d2127;
+}
+.img-circle{
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+}
+span.m-t-xs{
+    height: 24px;
+    line-height: 24px;
+    font-family: 'microsoft yahei';
+    font-size: 14px;
+    color: #fff;
+}
+.nav-header .text-muted{
+    height: 20px;
+    line-height: 20px;
+    font-family: 'Arial';
+    font-size: 14px;
+    color: #fff;
+}
+.navbar-static-side{
+    /*background: url("../images/backend_menu_bg.png") no-repeat 0 0;*/
+}
+/*Сͼ����ʽ*/
+.icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+.icon1{background: url("../images/icon_backend_menu_01.png") no-repeat 0 0px;}
+.icon2{background: url("../images/icon_backend_menu_02.png") no-repeat 0 0px;}
+.icon3{background: url("../images/icon_backend_menu_03.png") no-repeat 0 0px;}
+.icon4{background: url("../images/icon_backend_menu_04.png") no-repeat 0 0px;}
+.icon5{background: url("../images/icon_backend_menu_05.png") no-repeat 0 0px;}
+.icon6{background: url("../images/icon_backend_menu_06.png") no-repeat 0 0px;}
+.icon7{background: url("../images/icon_backend_menu_07.png") no-repeat 0 0px;}
+.icon8{background: url("../images/icon_backend_menu_08.png") no-repeat 0 0px;}
+.icon9{background: url("../images/icon_backend_menu_09.png") no-repeat 0 0px;}
+.icon10{background: url("../images/icon_backend_menu_10.png") no-repeat 0 0px;}
+.icon11{background: url("../images/icon_backend_menu_11.png") no-repeat 0 0px;}
+.icon12{background: url("../images/icon_backend_menu_12.png") no-repeat 0 0px;}
+.icon13{background: url("../images/icon_backend_menu_13.png") no-repeat 0 0px;}
+.icon14{background: url("../images/icon_backend_menu_14.png") no-repeat 0 0px;}
+.icon15{background: url("../images/icon_backend_menu_15.png") no-repeat 0 0px;}
+.icon16{background: url("../images/icon_backend_menu_16.png") no-repeat 0 0px;}
+.icon17{background: url("../images/icon_backend_menu_17.png") no-repeat 0 0px;}
+.icon18{background: url("../images/icon_backend_menu_18.png") no-repeat 0 0px;}
+.icon19{background: url("../images/icon_backend_menu_19.png") no-repeat 0 0px;}
+.icon20{background: url("../images/icon_backend_menu_20.png") no-repeat 0 0px;}
+.icon21{background: url("../images/icon_backend_menu_21.png") no-repeat 0 0px;}
+.icon22{background: url("../images/icon_backend_menu_22.png") no-repeat 0 0px;}
+.icon23{background: url("../images/icon_backend_menu_23.png") no-repeat 0 0px;}
+.icon24{background: url("../images/icon_backend_menu_24.png") no-repeat 0 0px;}
+.icon25{background: url("../images/icon_backend_menu_25.png") no-repeat 0 0px;}
+.icon26{background: url("../images/icon_backend_menu_26.png") no-repeat 0 0px;}
+.icon27{background: url("../images/icon_backend_menu_27.png") no-repeat 0 0px;}
+.icon28{background: url("../images/icon_backend_menu_28.png") no-repeat 0 0px;}
+.nav>li.list1{
+    margin-top: 15px;
+}
+.nav>li>a{
+    display: block;
+    width: 220px;
+    line-height: 50px;
+    font-family: 'microsoft yahei';
+    font-size: 14px;
+    color: #a7b1c2;
+    padding: 0 20px 0 25px;
+}
+.nav>li>a i{
+    margin-right: 10px;
+}
+.arrow{
+    margin-top: 16px;
+}
+.navbar-default .nav>li>a:focus, .navbar-default .nav>li>a:hover{background: rgba(0,0,0,0.6)}
+/*��ർ��ѡ��״̬*/
+.nav>li.active{
+    border-left: none;
+    background:rgba(0,0,0,0.4);
+}
+.nav>li.active>a>.nav-label{
+    color: #448aca;
+}
+.nav-second-level li a {
+    display: inline-block;
+    line-height: 32px;
+    font-family: 'microsoft yahei';
+    font-size: 14px;
+    color: #a7b1c2;
+    padding: 0 0 0 60px !important;
+}
+/*�Ҳ���ʽ*/
+.navbar{
+  	width: 1850px;
+    height: 60px;
+    background: #2f3243;
+}
+.btn-primary{
+    background: #0E9AEF!important;
+    border-color: #0E9AEF!important;
+}
+.btn-primary:hover{
+    background: #337ab7!important;
+    border-color: #337ab7!important;
+}
+.page-tabs a.active{
+    background: #39aaf5;
+    color: #fff;
+}
+.page-tabs a.active i:hover, .page-tabs a.active:hover{
+    background: #337ab7;
+}
+.content-tabs{
+    border-bottom: 2px solid #39aaf5;
+}
+.navbar-static-side{
+	top:60px;
+}
+#top{
+	width:100%;
+	height:60px;
+	/*position:absolute;
+	top:0;
+	left:0;*/
+	background:url("../assets/img/header_title.png") no-repeat 20px 10px #2f3243;
+}
+.navbar-minimalize{
+	display:block;
+	width:38px;
+	height:30px;
+	position:absolute;
+	top:-10px;
+	right:0;
+	z-index:2;
+	background:url("../images/btn_pullin.png") no-repeat 0 0;
+}
+.navbar-minimalize-click{
+	background:url("../images/btn_pullout.png") no-repeat 0 0;
+}
+/* .nav{
+	background:#2f3243;
+} */
+.nav-second-level li a{
+	background:#1C1E28;
+}
+#return-lead{
+	position:absolute;
+	top:10px;
+	right:50px;
+	display:block;
+	width:100px;
+	height:40px;
+	background:#228CE0;
+	border-radius:5px 5px;
+	color:#fff;
+	font-size:12px;
+	line-height:40px;
+	text-align:center;
+}
+.slimScrollDiv > *{
+	background:#2f3243;
+}
+body.fixed-sidebar .navbar-static-side{
+	height:73%!important;
+}
+#wrapper{
+	background:#2f3243;
+}

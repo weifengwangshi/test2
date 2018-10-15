@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="excelutil:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="excelutil-0.0.1.war">
+      <element id="artifact" artifact-name="excelutil:war exploded" />
+    </root>
+  </artifact>
+</component>

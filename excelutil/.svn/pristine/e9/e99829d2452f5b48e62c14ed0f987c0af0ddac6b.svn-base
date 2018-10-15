@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding:0;
+}
+.container{
+    width:100%;
+    height:584px;
+    position: absolute;
+    top:10%;
+    background: url(../images/bg.png) no-repeat top center;
+}
+.content{
+    width:1024px;
+    height:584px;
+    margin:0 auto;
+    position: relative;
+}
+.login{/*用户登录框*/
+    width:360px;
+    height:417px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 0;
+    right:0;
+}
+.login-top{
+    box-sizing: border-box;
+    width:100%;
+    height:74px;
+    line-height: 78px;
+    color:#fff;
+    padding-left: 30px;
+    background: url("../images/bg02.png") no-repeat;
+    font-family:SimHei,"Microsoft YaHei","rougescript-regular", "Helvetica Neue", "Helvetica", "WenQuanYi Micro Hei", Arial, sans-serif;
+    font-size: 24px;
+}
+.login-down{
+    width:100%;
+    height:343px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding-top: 40px;
+    text-align: center;
+    position: relative;
+}
+.input{/*输入框*/
+    box-sizing: border-box;
+    height:34px;
+    line-height: 34px;
+    border:1px solid #bfbfbf;
+    border-radius: 4px;
+    font-family:"Microsoft YaHei","rougescript-regular", "Helvetica Neue", "Helvetica", "WenQuanYi Micro Hei", Arial, sans-serif;
+    font-size: 14px;
+    color:#666;
+    outline: none;
+}
+.input-icon{
+    width:292px;
+    padding-left:38px;
+    margin-bottom: 20px;
+}
+.input-icon-user{
+    background:url(../images/icon01.png) no-repeat 10px center;
+}
+.input-icon-pwd{
+    background:url(../images/icon02.png) no-repeat 10px center;
+}
+.yzm{
+    width:292px;
+    margin:0 auto;
+    margin-bottom: 20px;
+}
+.yzm:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.input-yzm{
+    float: left;
+    width:152px;
+    padding-left:10px;
+}
+.yzm-img{
+    width:100px;
+    height:34px;
+    float: right;
+}
+.error-text{/*错误信息样式*/
+    width:292px;
+    height:14px;
+    color:#f75555;
+    text-align: center;
+    position: absolute;
+    top:13px;
+    left:50%;
+    margin-left: -146px;
+    font-size: 12px;
+}
+.setPwd{
+    width:292px;
+    height:12px;
+    font-size: 12px;
+    color:#808080;
+    margin:0 auto;
+    margin-bottom: 20px;
+}
+.setPwd a{
+    color:#808080;
+    text-decoration: none;
+}
+.login-btn{
+    display: block;
+    width:292px;
+    height:38px;
+    line-height: 38px;
+    border-radius: 4px;
+    background-color: #15b1d8;
+    color:#fff;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    margin:0 auto;
+    box-shadow: 0 1px 0 #9d9a9b;
+}
+.login-btn:hover{
+    background-color: #00a7d1;
+    box-shadow: 0 0 0 #9d9a9b;
+}

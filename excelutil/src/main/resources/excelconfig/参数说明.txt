@@ -1,0 +1,15 @@
+1、tableType 为hb(横表）或zb(纵表) 默认为hb;
+2、sheetIndex 为Excel的sheet位置0默认第一个;
+3、lineRow 数据为横表时一行数据对应表中的几条数据默认为一行对应一行数据 值为：1；
+4、needReadTitle （横表时）表头是否有需要读取的字段默认无（NO）,如果有（YES）；
+5.如果第四个成立时（YES）读取是可用<fieldTitles />标签 此标签内部可以写<field> 标签中的所有属性
+6、<fieldTitles /> 标签中有一个 keyValue 用于截取字符长度，例如（0,10）;不写读取全部;
+7、cols (当tableType="zb" 时<field /> 可用) 值之所在列和rows(值之所在行)一块使用 ;
+8、rowsMerge 数据值为空时向上读取默认为（NO）不向上读取;
+9、colsMerge 数据值为空时向左读取默认为（NO）不向左读;
+以下两个属性基于cellValueConverter属性
+10、callType 调用的是函数（FUNCTION）还是过程（PROCEDURE）;
+11、cellValueConfig 可以传入函数名称例如：f_get_zd_mcTodm('GB_XB','?')； 过程：包名.过程名（"","",""）; 传入参数 按顺序括号是中文下的括号;
+12、processType 调用为转换（REPLACE）检查）（CHECK）处理(PROCESSE);
+
+      注 ：约定数据从下往上有数据的内容第一列不能为空！！！否则此列不记！！！
